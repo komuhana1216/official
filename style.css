@@ -1653,3 +1653,86 @@ button {
     transform: none;
   }
 }
+
+/* =========================================
+   CUSTOM LOGO IMAGE
+========================================= */
+
+/* ローディング画面 */
+.loader-symbol {
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 12px;
+  font-size: 0;
+}
+
+.loader-symbol img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(0, 217, 255, 0.25));
+}
+
+/* ヒーロー中央 */
+.core-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 100px;
+  margin: 0;
+  font-size: 0;
+  letter-spacing: 0;
+}
+
+.core-letter img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* プロフィール */
+.profile-avatar {
+  overflow: hidden;
+  padding: 15px;
+}
+
+.profile-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* フッター */
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+}
+
+.footer-brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* スマホ */
+@media (max-width: 640px) {
+  .loader-symbol {
+    width: 95px;
+    height: 95px;
+  }
+
+  .core-letter {
+    width: 90px;
+    height: 85px;
+  }
+}
