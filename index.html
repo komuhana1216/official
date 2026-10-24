@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080B12">
+  <meta name="description" content="YOUR NAMEの公式サイト。Web制作、eスポーツ、クリエイティブ活動を紹介。">
+  <title>YOUR NAME | OFFICIAL PORTFOLIO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">メインコンテンツへ</a>
+
+  <!-- LOADING -->
+  <div class="loader" id="loader" aria-label="Loading">
+    <div class="loader-inner">
+      <div class="loader-symbol">N<span>.</span></div>
+      <p class="loader-name">YOUR NAME</p>
+      <div class="loader-track"><span></span></div>
+      <p class="loader-caption">INITIALIZING EXPERIENCE...</p>
+    </div>
+  </div>
+
+  <!-- BACKGROUND -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="background-grid" aria-hidden="true"></div>
+  <div class="background-glow glow-one" aria-hidden="true"></div>
+  <div class="background-glow glow-two" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <a href="#top" class="brand" aria-label="トップへ">
+      <span class="brand-icon">N<span>.</span></span>
+      <span class="brand-text">YOUR NAME<small>OFFICIAL PORTFOLIO</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="メニューを開く" aria-expanded="false"
+      aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-menu" id="navMenu" aria-label="メインナビゲーション">
+      <a href="#about">ABOUT</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#activities">ACTIVITIES</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#links" class="nav-contact">LINKS <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <div class="eyebrow reveal">
+          <span class="status-dot"></span>
+          INDEPENDENT CREATOR / OFFICIAL SITE
+        </div>
+
+        <p class="hero-kicker reveal">IDEAS INTO REALITY.</p>
+
+        <h1 class="hero-title reveal" id="hero-title">
+          CREATE.<br>
+          <span>CONNECT.</span><br>
+          <span class="outline-text">CHALLENGE.</span>
+        </h1>
+
+        <p class="hero-description reveal">
+          アイデアを、カタチに。<br>
+          好きなことに本気で向き合い、新しい可能性をつくる。
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#projects" class="button button-primary">
+            EXPLORE MY WORK <span>↗</span>
+          </a>
+          <a href="#about" class="button button-ghost">
+            ABOUT ME <span>↓</span>
+          </a>
+        </div>
+
+        <div class="hero-meta reveal">
+          <span><i></i> WEB / ESPORTS / CREATIVE</span>
+          <span>BASED IN JAPAN</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="orbit orbit-outer"></div>
+        <div class="orbit orbit-inner"></div>
+        <div class="orbit orbit-tilted"></div>
+        <div class="hero-core">
+          <span class="core-top">INNOVATE</span>
+          <span class="core-letter">N<span>.</span></span>
+          <span class="core-bottom">NEVER STOP CREATING</span>
+        </div>
+        <span class="floating-label label-one">CREATIVE_01</span>
+        <span class="floating-label label-two">SYSTEM ONLINE</span>
+        <span class="visual-cross cross-one">+</span>
+        <span class="visual-cross cross-two">+</span>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="下へスクロール">
+        <span class="scroll-line"></span>
+        SCROLL TO DISCOVER
+      </a>
+      <span class="hero-index">01 / 05</span>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section-shell content-section" id="about">
+      <div class="section-heading reveal">
+        <p class="section-index">01 — WHO I AM</p>
+        <h2>ABOUT <span>ME.</span></h2>
+        <p class="section-subtitle">自分について。</p>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-main reveal">
+          <div class="about-tag">THE PERSON BEHIND THE PROJECTS</div>
+          <h3>
+            好奇心を原動力に、<br>
+            <span class="accent-text">新しいことに挑戦する。</span>
+          </h3>
+          <p>
+            はじめまして、YOUR NAMEです。<br>
+            Web制作やeスポーツ、さまざまなクリエイティブ活動に取り組んでいます。
+          </p>
+          <p>
+            思いついたアイデアを実際に形にすること、
+            人と人をつなぐこと、そして挑戦を通して成長することを大切にしています。
+          </p>
+          <p>
+            このサイトでは、これまでの活動や制作したもの、
+            これから挑戦していきたいことを発信していきます。
+          </p>
+        </div>
+
+        <div class="about-side reveal">
+          <div class="profile-card">
+            <div class="profile-top">
+              <span class="profile-code">PROFILE_DATA</span>
+              <span class="profile-status"><i></i> ACTIVE</span>
+            </div>
+            <div class="profile-avatar">N<span>.</span></div>
+            <h3>YOUR NAME</h3>
+            <p class="profile-role">CREATOR / DEVELOPER</p>
+            <div class="profile-divider"></div>
+            <dl class="profile-details">
+              <div><dt>INTEREST</dt><dd>Web / Gaming / Design</dd></div>
+              <div><dt>LOCATION</dt><dd>Japan</dd></div>
+              <div><dt>MINDSET</dt><dd>Keep Creating.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section-shell content-section" id="projects">
+      <div class="section-heading reveal">
+        <p class="section-index">02 — WHAT I CREATE</p>
+        <h2>SELECTED <span>PROJECTS.</span></h2>
+        <p class="section-subtitle">制作実績・プロジェクト。</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-visual project-web">
+            <span class="project-number">PROJECT / 01</span>
+            <div class="mock-browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>MY WEB PROJECT</span></div>
+              <div class="browser-content">
+                <span class="mock-label">DESIGN × CODE</span>
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+                <div class="mock-button"></div>
+              </div>
+            </div>
+            <span class="project-visual-label">WEB DEVELOPMENT</span>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>01</span><span>WEB / DEVELOPMENT</span></div>
+            <h3>Web Development</h3>
+            <p>デザインと機能性を両立したWebサイトや、日々の課題を解決するWebツールを制作。</p>
+            <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a href="YOUR_WEB_PROJECT_URL" class="project-link" target="_blank" rel="noopener noreferrer">VIEW PROJECT <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual project-esports">
+            <span class="project-number">PROJECT / 02</span>
+            <div class="esports-mark">E<span>/</span>S</div>
+            <span class="esports-caption">PLAY. COMPETE. CONNECT.</span>
+            <span class="project-visual-label">ESPORTS CULTURE</span>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>02</span><span>ESPORTS / COMMUNITY</span></div>
+            <h3>Esports Projects</h3>
+            <p>eスポーツを通じた交流やコミュニティづくり、イベント・チーム運営に関する活動。</p>
+            <div class="tag-list"><span>Community</span><span>Management</span></div>
+            <a href="YOUR_ESPORTS_URL" class="project-link" target="_blank" rel="noopener noreferrer">VIEW PROJECT <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual project-creative">
+            <span class="project-number">PROJECT / 03</span>
+            <div class="creative-symbol"><span></span><span></span><span></span></div>
+            <span class="creative-caption">IDEA → EXPERIENCE</span>
+            <span class="project-visual-label">DIGITAL CREATIVE</span>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>03</span><span>CREATIVE / EXPERIMENT</span></div>
+            <h3>Creative Experiments</h3>
+            <p>新しいアイデアの実験や、デジタルコンテンツ・ゲーム関連の企画などに挑戦。</p>
+            <div class="tag-list"><span>Planning</span><span>Design</span><span>Gaming</span></div>
+            <a href="YOUR_CREATIVE_URL" class="project-link" target="_blank" rel="noopener noreferrer">VIEW PROJECT <span>↗</span></a>
+          </div>
+        </article>
+      </div>
+
+      <p class="section-footnote reveal">
+        ※ 上記は掲載用のサンプルです。実際の制作物や公開済みURLに置き換えてください。
+      </p>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section class="section-shell content-section" id="activities">
+      <div class="section-heading reveal">
+        <p class="section-index">03 — MY JOURNEY</p>
+        <h2>ACTIVI<span>TIES.</span></h2>
+        <p class="section-subtitle">活動とこれからの挑戦。</p>
+      </div>
+
+      <div class="activity-layout">
+        <div class="activity-intro reveal">
+          <h3>常に学び、<br>動き続ける。</h3>
+          <p>興味を持ったことを学び、実際に試し、次の挑戦へつなげていく。</p>
+          <p class="activity-highlight">EVERY PROJECT IS A NEW START.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-label">FIELD / 01</div>
+            <h3>Web & Technology</h3>
+            <p>Web開発やプログラミングを学び、アイデアを使えるサービスへと形にする。</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-label">FIELD / 02</div>
+            <h3>Esports & Community</h3>
+            <p>ゲームやeスポーツをきっかけに、人と人がつながる場づくりに取り組む。</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-label">FIELD / 03</div>
+            <h3>Creative Direction</h3>
+            <p>企画・デザイン・発信を組み合わせ、プロジェクトの魅力を届ける。</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-label">NEXT / 04</div>
+            <h3>What's Next?</h3>
+            <p>新しい技術やアイデアを取り入れながら、まだないものを作っていく。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section-shell content-section" id="skills">
+      <div class="section-heading reveal">
+        <p class="section-index">04 — MY TOOLKIT</p>
+        <h2>SKILLS & <span>INTERESTS.</span></h2>
+        <p class="section-subtitle">興味のある分野・制作ツール。</p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <span class="skill-number">01</span>
+          <span class="skill-icon">&lt;/&gt;</span>
+          <h3>Web Development</h3>
+          <p>WebサイトやWebアプリの制作。</p>
+          <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <span class="skill-number">02</span>
+          <span class="skill-icon">◈</span>
+          <h3>Design & Creative</h3>
+          <p>ビジュアルデザインやコンテンツ制作。</p>
+          <div class="tag-list"><span>UI / UX</span><span>Branding</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <span class="skill-number">03</span>
+          <span class="skill-icon">⌘</span>
+          <h3>Project Management</h3>
+          <p>企画の立案やチーム・コミュニティ運営。</p>
+          <div class="tag-list"><span>Planning</span><span>Teamwork</span></div>
+        </article>
+      </div>
+      <p class="section-footnote reveal">※ 掲載内容は初期設定です。実際の経験や習得状況に合わせて編集してください。</p>
+    </section>
+
+    <!-- LINKS -->
+    <section class="section-shell content-section links-section" id="links">
+      <div class="section-heading reveal">
+        <p class="section-index">05 — FIND ME ONLINE</p>
+        <h2>LET'S <span>CONNECT.</span></h2>
+        <p class="section-subtitle">各種SNS・活動リンク。</p>
+      </div>
+
+      <div class="connect-panel reveal">
+        <p class="connect-overline">HAVE AN IDEA? LET'S MAKE IT REAL.</p>
+        <h3>つながりから、<br><span>次の可能性を。</span></h3>
+        <p>活動の最新情報や制作物は、各種リンクからチェックしてください。</p>
+        <div class="social-links">
+          <a href="YOUR_X_URL" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">𝕏</span><span><strong>X / Twitter</strong><small>最新情報・日々の発信</small></span><span class="social-arrow">↗</span>
+          </a>
+          <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">⌘</span><span><strong>GitHub</strong><small>コード・Web制作</small></span><span class="social-arrow">↗</span>
+          </a>
+          <a href="YOUR_BLOG_URL" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">↗</span><span><strong>Blog / Other</strong><small>活動記録・プロジェクト</small></span><span class="social-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <a href="#top" class="footer-brand">N<span>.</span></a>
+    <p>BUILD YOUR OWN FUTURE.</p>
+    <p class="copyright">© <span id="year"></span> YOUR NAME. ALL RIGHTS RESERVED.</p>
+    <a href="#top" class="back-top">BACK TO TOP ↑</a>
+  </footer>
+</body>
+</html>
