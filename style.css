@@ -1736,3 +1736,20 @@ button {
     height: 85px;
   }
 }
+
+/* ヘッダーのロゴ画像 */
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.brand-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
