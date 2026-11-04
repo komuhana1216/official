@@ -1,0 +1,741 @@
+/* =====================================================
+   M1yuN Create. | ABOUT PAGE
+===================================================== */
+
+.about-page {
+  background: #f7f7f7;
+  color: #171717;
+}
+
+/* COMMON */
+
+.about-container {
+  width: min(1180px, calc(100% - 100px));
+  margin: 0 auto;
+}
+
+.about-page .section-padding {
+  padding: 125px 0;
+}
+
+.about-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 75px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.about-section-heading p {
+  margin: 0;
+}
+
+.about-section-number {
+  color: #999;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.about-section-heading::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 1px;
+  background: #c8c8c8;
+}
+
+/* HEADER */
+
+.about-page .site-header {
+  background: rgba(247, 247, 247, 0.94);
+  color: #171717;
+}
+
+.about-page .site-logo {
+  color: #171717;
+  text-decoration: none;
+}
+
+.about-page .site-logo span {
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.about-page .desktop-nav a {
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+.about-page .desktop-nav a:hover,
+.about-page .desktop-nav a.active {
+  color: #111;
+}
+
+.about-page .menu-toggle span {
+  background: #171717;
+}
+
+.about-page .mobile-menu {
+  background: #f7f7f7;
+}
+
+.about-page .mobile-menu a {
+  color: #171717;
+}
+
+/* HERO */
+
+.about-hero {
+  position: relative;
+  padding: 190px 0 100px;
+  overflow: hidden;
+}
+
+.about-eyebrow {
+  margin: 0 0 35px;
+  color: #888;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.about-main-title {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(75px, 15vw, 190px);
+  font-weight: 700;
+  letter-spacing: -0.085em;
+  line-height: 0.9;
+}
+
+.about-main-title span {
+  color: #aaa;
+}
+
+.about-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 70px;
+}
+
+.about-hero-lead {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.04em;
+}
+
+.about-hero-jp {
+  margin: 0 0 5px;
+  color: #777;
+  font-size: 13px;
+  line-height: 2;
+  text-align: right;
+}
+
+.about-hero-line {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #dedede;
+}
+
+/* INTRODUCTION */
+
+.about-intro {
+  background: #fff;
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+
+.about-intro-title h2 {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(48px, 7vw, 85px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.075em;
+}
+
+.about-intro-title h2 span {
+  color: #aaa;
+}
+
+.about-intro-text {
+  padding-top: 10px;
+}
+
+.about-intro-text p {
+  color: #777;
+  font-size: 13px;
+  line-height: 2.3;
+  margin: 0 0 25px;
+}
+
+.about-intro-text .about-lead-text {
+  color: #222;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+/* PROFILE */
+
+.about-profile {
+  background: #f0f0f0;
+}
+
+.about-profile-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.about-profile-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #dedede;
+}
+
+.about-profile-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.about-profile-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #dedede;
+}
+
+.about-profile-placeholder span {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(100px, 15vw, 180px);
+  font-weight: 700;
+  color: #f7f7f7;
+  letter-spacing: -0.1em;
+}
+
+.about-profile-placeholder small {
+  color: #999;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.about-profile-image.no-profile-image img {
+  display: none;
+}
+
+.about-profile-label {
+  margin: 0 0 20px;
+  color: #888;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.about-profile-content h2 {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(55px, 7vw, 85px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 1;
+}
+
+.about-profile-subtitle {
+  margin: 15px 0 35px;
+  color: #888;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.about-profile-description p {
+  margin: 0 0 18px;
+  color: #666;
+  font-size: 13px;
+  line-height: 2.2;
+}
+
+.about-profile-meta {
+  display: grid;
+  gap: 0;
+  margin-top: 40px;
+  border-top: 1px solid #d5d5d5;
+}
+
+.about-profile-meta div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  padding: 17px 0;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.about-profile-meta span {
+  color: #999;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.about-profile-meta strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* PHILOSOPHY */
+
+.about-philosophy {
+  background: #171717;
+  color: #fff;
+}
+
+.about-philosophy .about-section-number {
+  color: #777;
+}
+
+.about-philosophy .about-section-heading::after {
+  background: #444;
+}
+
+.about-philosophy-heading {
+  margin-bottom: 85px;
+}
+
+.about-philosophy-heading > p {
+  margin: 0 0 25px;
+  color: #888;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.about-philosophy-heading h2 {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(50px, 8vw, 100px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.075em;
+}
+
+.about-principle {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 35px;
+  padding: 35px 0;
+  border-top: 1px solid #444;
+}
+
+.about-principle:last-child {
+  border-bottom: 1px solid #444;
+}
+
+.about-principle > span {
+  color: #777;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+}
+
+.about-principle h3 {
+  margin: 0 0 15px;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(21px, 3vw, 30px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.about-principle p {
+  max-width: 650px;
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+  line-height: 2.2;
+}
+
+/* SKILLS */
+
+.about-skills {
+  background: #fff;
+}
+
+.about-skills-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 55px;
+}
+
+.about-skills-intro h2,
+.about-activities-heading h2 {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(40px, 6vw, 70px);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+}
+
+.about-skills-intro p {
+  max-width: 350px;
+  margin: 0 0 8px;
+  color: #888;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.about-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+.about-skill-card {
+  min-height: 260px;
+  padding: 38px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease;
+}
+
+.about-skill-card:hover {
+  background: #f5f5f5;
+}
+
+.about-skill-card > span {
+  color: #999;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.about-skill-card h3 {
+  margin: 35px 0 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.about-skill-card p {
+  margin: 0 0 25px;
+  color: #888;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.about-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-skill-tags span {
+  padding: 7px 11px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  color: #555;
+  font-size: 10px;
+}
+
+.about-skills-note {
+  margin: 20px 0 0;
+  color: #999;
+  font-size: 10px;
+}
+
+/* ACTIVITIES */
+
+.about-activities {
+  background: #ededed;
+}
+
+.about-activities-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 65px;
+}
+
+.about-activities-heading p {
+  max-width: 350px;
+  margin: 0 0 8px;
+  color: #777;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.about-activity {
+  display: grid;
+  grid-template-columns: 70px 1fr 30px;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+}
+
+.about-activity:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.about-activity > span:first-child {
+  color: #999;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+}
+
+.about-activity h3 {
+  margin: 0 0 10px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.about-activity p {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.about-activity-arrow {
+  color: #777;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.about-activity:hover .about-activity-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* CONTACT CTA */
+
+.about-contact-cta {
+  padding: 125px 0;
+  background: #171717;
+  color: #fff;
+}
+
+.about-contact-cta > .about-container > p {
+  margin: 0 0 30px;
+  color: #888;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.about-contact-cta h2 {
+  margin: 0 0 55px;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(55px, 10vw, 120px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.08em;
+}
+
+.about-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 45px;
+  padding: 20px 0;
+  border-bottom: 1px solid #777;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.about-contact-link:hover {
+  gap: 65px;
+}
+
+.about-contact-link span {
+  font-size: 18px;
+}
+
+/* FOOTER */
+
+.about-page .site-footer {
+  background: #111;
+  color: #fff;
+}
+
+.about-page .site-footer .site-logo {
+  color: #fff;
+}
+
+.about-page .site-footer p {
+  color: #888;
+}
+
+.about-page .site-footer small {
+  color: #777;
+}
+
+/* BACK TO TOP */
+
+.about-page .back-to-top {
+  color: #171717;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .about-container {
+    width: calc(100% - 60px);
+  }
+
+  .about-intro-grid {
+    gap: 45px;
+  }
+
+  .about-profile-grid {
+    gap: 55px;
+  }
+
+  .about-skills-intro,
+  .about-activities-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .about-container {
+    width: calc(100% - 40px);
+  }
+
+  .about-page .section-padding {
+    padding: 85px 0;
+  }
+
+  .about-section-heading {
+    margin-bottom: 50px;
+  }
+
+  .about-hero {
+    padding: 150px 0 70px;
+  }
+
+  .about-main-title {
+    font-size: clamp(65px, 18vw, 110px);
+  }
+
+  .about-hero-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 45px;
+  }
+
+  .about-hero-jp {
+    text-align: left;
+  }
+
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-intro-title h2 {
+    font-size: 58px;
+  }
+
+  .about-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-profile-image {
+    max-width: 420px;
+    aspect-ratio: 5 / 4;
+  }
+
+  .about-profile-content h2 {
+    font-size: 65px;
+  }
+
+  .about-profile-meta div {
+    grid-template-columns: 95px 1fr;
+    gap: 10px;
+  }
+
+  .about-philosophy-heading {
+    margin-bottom: 55px;
+  }
+
+  .about-philosophy-heading h2 {
+    font-size: 52px;
+  }
+
+  .about-principle {
+    grid-template-columns: 35px 1fr;
+    gap: 15px;
+    padding: 28px 0;
+  }
+
+  .about-skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-skill-card {
+    min-height: auto;
+    padding: 30px 25px;
+  }
+
+  .about-skill-card h3 {
+    margin-top: 25px;
+  }
+
+  .about-activity {
+    grid-template-columns: 35px 1fr 20px;
+    gap: 12px;
+    padding: 25px 0;
+  }
+
+  .about-activity h3 {
+    font-size: 18px;
+  }
+
+  .about-activity p {
+    font-size: 11px;
+  }
+
+  .about-contact-cta {
+    padding: 90px 0;
+  }
+
+  .about-contact-cta h2 {
+    font-size: 58px;
+  }
+}
