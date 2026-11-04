@@ -1,350 +1,237 @@
-
 /* =========================================
-   YOUR NAME | INTERACTIONS
+   M1yuN Create. | MAIN JAVASCRIPT
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* =====================================
+     LOADING SCREEN
+  ===================================== */
+
   const loader = document.getElementById("loader");
-  const menuToggle = document.getElementById("menuToggle");
-  const navMenu = document.getElementById("navMenu");
-  const navLinks = document.querySelectorAll(".nav-menu a");
-  const revealItems = document.querySelectorAll(".reveal");
-  const year = document.getElementById("year");
-  const canvas = document.getElementById("particles");
 
-  // CURRENT YEAR
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
-  // LOADING SCREEN
-  // Wait for the page to finish loading, then hide the overlay.
   const hideLoader = () => {
-    if (!loader) return;
-
-    loader.classList.add("is-hidden");
-
-    // Remove it from keyboard navigation after the transition.
-    window.setTimeout(() => {
-      loader.setAttribute("aria-hidden", "true");
-    }, 700);
+    if (loader) {
+      loader.classList.add("loaded");
+      document.body.classList.add("page-loaded");
+    }
   };
 
-  if (document.readyState === "complete") {
-    window.setTimeout(hideLoader, 500);
-  } else {
-    window.addEventListener("load", () => {
-      window.setTimeout(hideLoader, 350);
-    }, { once: true });
+  window.addEventListener("load", () => {
+    setTimeout(hideLoader, 1300);
+  });
 
-    // Fallback in case a third-party resource loads slowly.
-    window.setTimeout(hideLoader, 2500);
-  }
+  // 読み込みが遅い場合の保険
+  setTimeout(hideLoader, 5000);
 
-  // MOBILE MENU
+
+  /* =====================================
+     HEADER SCROLL
+  ===================================== */
+
+  const header = document.getElementById("header");
+
+  const handleHeader = () => {
+    if (!header) return;
+
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  };
+
+  window.addEventListener("scroll", handleHeader, {
+    passive: true
+  });
+
+  handleHeader();
+
+
+  /* =====================================
+     MOBILE MENU
+  ===================================== */
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileLinks = document.querySelectorAll(".mobile-menu-inner > a");
+
+  const openMenu = () => {
+    if (!menuToggle || !mobileMenu) return;
+
+    menuToggle.classList.add("active");
+    mobileMenu.classList.add("open");
+
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "メニューを閉じる");
+
+    document.body.classList.add("menu-open");
+  };
+
   const closeMenu = () => {
-    if (!menuToggle || !navMenu) return;
+    if (!menuToggle || !mobileMenu) return;
+
+    menuToggle.classList.remove("active");
+    mobileMenu.classList.remove("open");
 
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "メニューを開く");
-    navMenu.classList.remove("is-open");
+
     document.body.classList.remove("menu-open");
   };
 
-  if (menuToggle && navMenu) {
+  if (menuToggle && mobileMenu) {
+
     menuToggle.addEventListener("click", () => {
-      const isOpen =
-        menuToggle.getAttribute("aria-expanded") === "true";
-
-      menuToggle.setAttribute("aria-expanded", String(!isOpen));
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "メニューを開く" : "メニューを閉じる"
-      );
-
-      navMenu.classList.toggle("is-open", !isOpen);
-      document.body.classList.toggle("menu-open", !isOpen);
+      if (mobileMenu.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
-    navLinks.forEach((link) => {
+    mobileLinks.forEach(link => {
       link.addEventListener("click", closeMenu);
     });
 
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", event => {
       if (event.key === "Escape") {
         closeMenu();
       }
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 640) {
+      if (window.innerWidth > 800) {
         closeMenu();
       }
     });
   }
 
-  // SCROLL REVEAL
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
 
-  if ("IntersectionObserver" in window && !reduceMotion) {
+  /* =====================================
+     SCROLL REVEAL
+  ===================================== */
+
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach((entry) => {
+
+        entries.forEach(entry => {
+
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
+
             observer.unobserve(entry.target);
           }
+
         });
+
       },
       {
         threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
+        rootMargin: "0px 0px -40px 0px"
       }
     );
 
-    revealItems.forEach((item) => {
-      revealObserver.observe(item);
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
     });
+
   } else {
-    revealItems.forEach((item) => {
-      item.classList.add("is-visible");
+
+    revealElements.forEach(element => {
+      element.classList.add("is-visible");
+    });
+
+  }
+
+
+  /* =====================================
+     BACK TO TOP
+  ===================================== */
+
+  const backTop = document.getElementById("backTop");
+
+  if (backTop) {
+    backTop.addEventListener("click", event => {
+      event.preventDefault();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     });
   }
 
-  // ACTIVE NAVIGATION
-  const sections = document.querySelectorAll(
-    "main section[id]"
-  );
 
-  if ("IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+  /* =====================================
+     CURRENT YEAR
+  ===================================== */
 
-          navLinks.forEach((link) => {
-            const matches =
-              link.getAttribute("href") ===
-              `#${entry.target.id}`;
+  const currentYear = document.getElementById("currentYear");
 
-            if (matches) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          });
-        });
-      },
-      {
-        rootMargin: "-25% 0px -60% 0px"
-      }
-    );
-
-    sections.forEach((section) => {
-      sectionObserver.observe(section);
-    });
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
   }
 
-  // NEON PARTICLE BACKGROUND
-  if (!canvas) return;
 
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
+  /* =====================================
+     IMAGE PLACEHOLDER / WORK CARD
+  ===================================== */
 
-  const motionPreference = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
+  const workCards = document.querySelectorAll(".work-card");
 
-  let width = 0;
-  let height = 0;
-  let particles = [];
-  let animationId = null;
-  let lastFrameTime = 0;
-  let running = false;
+  workCards.forEach(card => {
 
-  const pointer = {
-    x: -1000,
-    y: -1000
-  };
-
-  const isMobile = () => window.innerWidth <= 640;
-  const isLowMotion = () => motionPreference.matches;
-
-  const createParticles = () => {
-    const area = width * height;
-    const divisor = isMobile() ? 18000 : 12500;
-    const count = Math.min(
-      90,
-      Math.max(20, Math.floor(area / divisor))
-    );
-
-    particles = Array.from({ length: count }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      radius: Math.random() * 1.5 + 0.5,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      alpha: Math.random() * 0.45 + 0.15
-    }));
-  };
-
-  const resizeCanvas = () => {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-    width = window.innerWidth;
-    height = window.innerHeight;
-
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
-
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-    createParticles();
-    drawFrame();
-  };
-
-  const drawFrame = () => {
-    if (!ctx) return;
-
-    ctx.clearRect(0, 0, width, height);
-
-    // Draw particles.
-    particles.forEach((particle) => {
-      ctx.beginPath();
-      ctx.arc(
-        particle.x,
-        particle.y,
-        particle.radius,
-        0,
-        Math.PI * 2
-      );
-
-      ctx.fillStyle =
-        `rgba(0, 217, 255, ${particle.alpha})`;
-
-      ctx.fill();
+    card.addEventListener("mouseenter", () => {
+      card.classList.add("hovered");
     });
 
-    // Connect nearby particles with subtle neon lines.
-    const maxDistance = isMobile() ? 75 : 105;
-
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const a = particles[i];
-        const b = particles[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < maxDistance) {
-          const opacity =
-            (1 - distance / maxDistance) * 0.13;
-
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-
-          ctx.strokeStyle =
-            `rgba(0, 190, 255, ${opacity})`;
-
-          ctx.lineWidth = 0.6;
-          ctx.stroke();
-        }
-      }
-    }
-  };
-
-  const animate = (timestamp) => {
-    if (!running) return;
-
-    animationId = requestAnimationFrame(animate);
-
-    // Limit the update rate to reduce unnecessary work.
-    if (timestamp - lastFrameTime < 33) return;
-    lastFrameTime = timestamp;
-
-    particles.forEach((particle) => {
-      particle.x += particle.vx;
-      particle.y += particle.vy;
-
-      // Subtle mouse interaction.
-      const dx = particle.x - pointer.x;
-      const dy = particle.y - pointer.y;
-      const distanceSquared = dx * dx + dy * dy;
-
-      if (distanceSquared < 10000 && distanceSquared > 0) {
-        const distance = Math.sqrt(distanceSquared);
-        const force = (100 - distance) / 1000;
-
-        particle.x += (dx / distance) * force * 5;
-        particle.y += (dy / distance) * force * 5;
-      }
-
-      // Wrap particles around the screen.
-      if (particle.x < 0) particle.x = width;
-      if (particle.x > width) particle.x = 0;
-      if (particle.y < 0) particle.y = height;
-      if (particle.y > height) particle.y = 0;
+    card.addEventListener("mouseleave", () => {
+      card.classList.remove("hovered");
     });
 
-    drawFrame();
-  };
-
-  const startAnimation = () => {
-    if (running || isLowMotion()) return;
-
-    running = true;
-    lastFrameTime = 0;
-    animationId = requestAnimationFrame(animate);
-  };
-
-  const stopAnimation = () => {
-    running = false;
-
-    if (animationId !== null) {
-      cancelAnimationFrame(animationId);
-      animationId = null;
-    }
-  };
-
-  window.addEventListener("pointermove", (event) => {
-    if (event.pointerType === "touch") return;
-
-    pointer.x = event.clientX;
-    pointer.y = event.clientY;
-  }, { passive: true });
-
-  window.addEventListener("pointerleave", () => {
-    pointer.x = -1000;
-    pointer.y = -1000;
   });
 
-  window.addEventListener("resize", resizeCanvas, {
-    passive: true
+
+  /* =====================================
+     ANCHOR SMOOTH SCROLL
+  ===================================== */
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", event => {
+
+      const targetId = anchor.getAttribute("href");
+
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+
+      if (!target) return;
+
+      event.preventDefault();
+
+      const headerHeight = header ? header.offsetHeight : 0;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
+    });
+
   });
 
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      stopAnimation();
-    } else {
-      startAnimation();
-    }
-  });
 
-  motionPreference.addEventListener("change", () => {
-    stopAnimation();
+  console.log("M1yuN Create. | Website initialized.");
 
-    if (isLowMotion()) {
-      drawFrame();
-    } else {
-      startAnimation();
-    }
-  });
-
-  resizeCanvas();
-  startAnimation();
 });
